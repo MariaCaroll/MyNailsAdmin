@@ -12,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
    //private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
 
     private EditText edLogin, edSenha;
-    private EditText edNomePro, edSobrenomeProf, edFantasia, edEndereco, edNumero, edBairro, edUf;
+    private EditText edNomePro, edSobrenomeProf, edFantasia, edEndereco, edNumero, edBairro, edUf, edPhone, edWhats;
     private EditText edCidade, edCep, edProfissao, edModalidades, edAtendimento, edMinimo, edMaximo;
-    private Button btEnviarLogin, bnProximoExpecificacoes,btSalvarProf ;
+    private Button btEnviarLogin, bnCadastraProfi,btSalvarProf ;
     private Button btCreateProf, btReadProf;
 
     @Override
@@ -74,33 +74,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void carregaComponenstesProfi() {
-        bnProximoExpecificacoes = (Button) findViewById(R.id.btnProximo);
+        bnCadastraProfi = (Button) findViewById(R.id.btnCadastrar);
         edNomePro = (EditText) findViewById(R.id.edtNomeProf);
         edSobrenomeProf = (EditText) findViewById(R.id.edtSobrenomeProf);
         edFantasia = (EditText) findViewById(R.id.edtNomeFantasia);
         edEndereco = (EditText) findViewById(R.id.edtEnderecoProf);
-        edNumero = (EditText) findViewById(R.id.edtNomeProf);
+        edNumero = (EditText) findViewById(R.id.edtNumeroProf);
         edBairro = (EditText) findViewById(R.id.edtBairroProf);
         edCidade= (EditText) findViewById(R.id.edtCidadeProf);
         edUf = (EditText) findViewById(R.id.edtUFProf);
+        edModalidades = (EditText) findViewById(R.id.edtModalidades);
+        edAtendimento = (EditText) findViewById(R.id.edtModoAtender);
+        edMinimo = (EditText) findViewById(R.id.edtMinimo);
+        edMaximo = (EditText) findViewById(R.id.edtMaximo);
+        edPhone = (EditText) findViewById(R.id.edtPhoneProf);
+        edWhats = (EditText) findViewById(R.id.edtWhatsProf);
 
-        bnProximoExpecificacoes.setOnClickListener(new View.OnClickListener() {
+
+        //Macaras
+        edPhone.addTextChangedListener(Mask.insert("(##)####-####", edPhone));
+        edWhats.addTextChangedListener(Mask.insert("(##) #####-####", edWhats));
+
+
+        bnCadastraProfi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_cadastro_expecificacao_prof);
-                carregaComponenstesCadastroExpecifProfi();
+
             }
         });
 
 
 
-    }
-    private void carregaComponenstesCadastroExpecifProfi() {
-        btSalvarProf = (Button) findViewById(R.id.btnCadastrar);
-        edModalidades = (EditText) findViewById(R.id.edtModalidades);
-        edAtendimento = (EditText) findViewById(R.id.edtModoAtender);
-        edMinimo = (EditText) findViewById(R.id.edtMinimo);
-        edMaximo = (EditText) findViewById(R.id.edtMaximo);
     }
 
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "708559127930",
+    "firebase_url": "https://mynailsadmin.firebaseio.com",
+    "project_id": "mynailsadmin",
+    "storage_bucket": "mynailsadmin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708559127930:android:ab980896570494890342c3",
+        "android_client_info": {
+          "package_name": "com.example.mynailsadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708559127930-0c4vjd1i3h9eisqofbf3s6qlq3b3npvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mynailsadmin",
+            "certificate_hash": "e31594129de7096ec4248a46ea262e09abec59a9"
+          }
+        },
+        {
+          "client_id": "708559127930-3lah64dgche8j42fdniidrabtlc6ios8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHBRcFx8kvywgurQg1buD5OhoOjIDfQmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708559127930-3lah64dgche8j42fdniidrabtlc6ios8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MyNailsAdmin</string>
+
+    <string-array name="profissao">
+        <item> Manicure e Pedicure</item>
+        <item> Cabelereiro </item>
+
+    </string-array>
+
+    <string-array name="modoAtender">
+        <item> A domicilio</item>
+        <item> Em Casa</item>
+        <item> No salão</item>
+    </string-array>
 </resources>

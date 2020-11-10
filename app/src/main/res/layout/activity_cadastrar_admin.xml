@@ -14,7 +14,7 @@
         android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="Welcome To My Nays Admin"
+        android:text="Create Admin in My Nails"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="60dp"
         android:textAlignment="center"
@@ -27,12 +27,12 @@
         android:layout_height="59dp" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/txtCreateAdmin"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:fontFamily="serif-monospace"
-        android:text="Login"
+        android:text="E-mail"
         android:textColor="@android:color/darker_gray"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -42,9 +42,9 @@
         android:layout_height="14dp" />
 
     <EditText
-        android:id="@+id/edtLoginAdmin"
+        android:id="@+id/edtCreateAdmin"
         android:layout_width="232dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:fontFamily="serif-monospace"
         android:textColor="@android:color/darker_gray"
@@ -73,7 +73,7 @@
 
 
     <EditText
-        android:id="@+id/editTextPasswordAdmin"
+        android:id="@+id/editTextPasswordCreateAdmin"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
@@ -86,7 +86,7 @@
         android:layout_width="match_parent"
         android:layout_height="38dp" />
     <Button
-        android:id="@+id/btnAutenticarDadosAdmin"
+        android:id="@+id/btnCreateAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
@@ -95,20 +95,5 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textStyle="bold"
         android:background="@android:color/transparent"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="38dp" />
-
-    <Button
-        android:id="@+id/btnCreateNewAdmin"
-        android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="serif-monospace"
-        android:text="Create Account"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
 </LinearLayout>
 

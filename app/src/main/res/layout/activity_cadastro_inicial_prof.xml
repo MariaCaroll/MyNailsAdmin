@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
@@ -8,11 +9,11 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:background="@color/darknnes"
-        android:backgroundTint="@color/darknnesrigh">
+        android:backgroundTint="@color/darknnesrigh"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtWelcome"
@@ -21,7 +22,7 @@
 
             android:layout_marginTop="30dp"
             android:fontFamily="serif-monospace"
-            android:text="Cadastrar Inical de Profissional "
+            android:text="Cadastrar Profissionais "
             android:textAlignment="center"
             android:textColor="@android:color/holo_orange_dark"
             android:textSize="30dp"
@@ -31,6 +32,16 @@
             android:layout_width="match_parent"
             android:layout_height="36dp" />
 
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,10 +62,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Sobrenome"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:text="Sobrenome" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -102,7 +113,6 @@
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -124,7 +134,42 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/textWhatsProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WhatsApp"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+                android:id="@+id/edtWhatsProf"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,22 +180,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Telefone"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:text="Telefone" />
-            <TextView
-                android:id="@+id/textWhatsProf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="WhatsApp" />
+                android:textStyle="bold" />
 
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -167,16 +202,6 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtWhatsProf"
-                android:layout_width="205dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="20dp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -194,7 +219,6 @@
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
 
 
         </LinearLayout>
@@ -223,6 +247,42 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
+            <TextView
+                android:id="@+id/textCepProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CEP"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtCEPProf"
+                android:layout_width="205dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/textCidadeProf"
                 android:layout_width="45dp"
@@ -232,15 +292,6 @@
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/textCepProf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="CEP" />
 
         </LinearLayout>
 
@@ -260,18 +311,9 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtCEPProf"
-                android:layout_width="205dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="20dp"
-                android:textStyle="bold" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -296,7 +338,7 @@
 
             <EditText
                 android:id="@+id/edtEnderecoProf"
-                android:layout_width="205dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -306,8 +348,8 @@
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -340,7 +382,7 @@
 
             <EditText
                 android:id="@+id/edtNumeroProf"
-                android:layout_width="205dp"
+                android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -361,12 +403,6 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"/>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -377,20 +413,20 @@
                 android:id="@+id/txtValorMinimo"
                 android:layout_width="203dp"
                 android:layout_height="wrap_content"
+                android:text="Valor Minimo"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:text="Valor Minimo" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textValorMaximo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Valor Maxímo"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:text="Valor Maxímo" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -401,8 +437,8 @@
 
             <EditText
                 android:id="@+id/edtMinimo"
-                android:layout_width="164dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -429,23 +465,14 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txtTipoAtendimento"
-                android:layout_width="203dp"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="Modo Antender" />
-
-            <TextView
                 android:id="@+id/textTipoProfissional"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Profissão"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textStyle="bold"
                 android:textSize="20dp"
-                android:text="Profissão" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -454,19 +481,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/edtModoAtender"
-                android:layout_width="162dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColor="@android:color/holo_orange_light"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/edtProfissao"
+            <Spinner
+                android:id="@+id/sprProfissao"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -478,7 +494,45 @@
 
         </LinearLayout>
 
-        <LinearLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtTipoAtendimento"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:text="Modo Antender"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/sprModoAtender"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -512,19 +566,13 @@
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
 
 
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="17dp" />
 
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="17dp" />
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -538,6 +586,8 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
 
 </ScrollView>

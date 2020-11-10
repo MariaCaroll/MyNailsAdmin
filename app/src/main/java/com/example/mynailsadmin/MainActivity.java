@@ -4,17 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-   //private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private EditText edLogin, edSenha;
+   private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+    private FirebaseAuth usuarioAdmin = FirebaseAuth.getInstance();
+
+    private EditText edLogin, edSenha, edEmailAdmin, edSenhaAdmin;
     private EditText edNomePro, edSobrenomeProf, edFantasia, edEndereco, edNumero, edBairro, edUf, edPhone, edWhats;
-    private EditText edCidade, edCep, edProfissao, edModalidades, edAtendimento, edMinimo, edMaximo;
-    private Button btEnviarLogin, bnCadastraProfi,btSalvarProf ;
+    private EditText edCidade, edCep, edModalidades, edMinimo, edMaximo;
+    private Spinner spAtendimento, spProfissao;
+    private Button btEnviarLogin, btCreateAdmin, bnCadastraProfi,btSalvarProf ;
     private Button btCreateProf, btReadProf;
 
     @Override
@@ -51,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 carregaComponenstesOpcoesAdmin();
             }
         });
+        btCreateAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_cadastrar_admin);
+                carregaComponenstesNewAdmin();
+            }
+        });
     }
     private void carregaComponenstesOpcoesAdmin() {
         btCreateProf = (Button) findViewById(R.id.btnTelaCadastroProfissional);
@@ -72,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void carregaComponenstesNewAdmin() {
+        edEmailAdmin = (EditText) findViewById(R.id.edtCreateAdmin);
+        edSenhaAdmin = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
+        btCreateAdmin = (Button)  findViewById(R.id.btnCreateNewAdmin);
+
+    }
 
     private void carregaComponenstesProfi() {
         bnCadastraProfi = (Button) findViewById(R.id.btnCadastrar);
@@ -84,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
         edCidade= (EditText) findViewById(R.id.edtCidadeProf);
         edUf = (EditText) findViewById(R.id.edtUFProf);
         edModalidades = (EditText) findViewById(R.id.edtModalidades);
-        edAtendimento = (EditText) findViewById(R.id.edtModoAtender);
+        spAtendimento = (Spinner) findViewById(R.id.sprModoAtender);
+        spProfissao = (Spinner) findViewById(R.id.sprProfissao);
         edMinimo = (EditText) findViewById(R.id.edtMinimo);
         edMaximo = (EditText) findViewById(R.id.edtMaximo);
         edPhone = (EditText) findViewById(R.id.edtPhoneProf);
@@ -94,6 +118,23 @@ public class MainActivity extends AppCompatActivity {
         //Macaras
         edPhone.addTextChangedListener(Mask.insert("(##)####-####", edPhone));
         edWhats.addTextChangedListener(Mask.insert("(##) #####-####", edWhats));
+
+        //Spinner
+        Spinner spinProf = findViewById(R.id.sprProfissao);
+        ArrayAdapter<CharSequence> adapterProf = ArrayAdapter.createFromResource(this, R.array.profissao, android.R.layout.simple_spinner_item);
+        adapterProf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinProf.setAdapter(adapterProf);
+        spinProf.setOnItemSelectedListener(this);
+        TextView textoSpProf = (TextView) spProfissao.getChildAt(0);
+        textoSpProf.setTextColor(getResources().getColor(R.color.holo_orange_clarinha));
+
+        Spinner spinPAten = findViewById(R.id.sprModoAtender);
+        ArrayAdapter<CharSequence> adapterAten = ArrayAdapter.createFromResource(this, R.array.modoAtender, android.R.layout.simple_spinner_item);
+        adapterAten.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinProf.setAdapter(adapterAten);
+        spinProf.setOnItemSelectedListener(this);
+        TextView textoSpAten = (TextView) spProfissao.getChildAt(0);
+        textoSpAten.setTextColor(getResources().getColor(R.color.holo_orange_clarinha));
 
 
         bnCadastraProfi.setOnClickListener(new View.OnClickListener() {
@@ -107,4 +148,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }

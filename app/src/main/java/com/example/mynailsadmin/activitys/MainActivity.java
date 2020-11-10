@@ -1,4 +1,4 @@
-package com.example.mynailsadmin;
+package com.example.mynailsadmin.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.mynailsadmin.Mask;
+import com.example.mynailsadmin.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,9 +24,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private EditText edLogin, edSenha, edEmailAdmin, edSenhaAdmin;
     private EditText edNomePro, edSobrenomeProf, edFantasia, edEndereco, edNumero, edBairro, edUf, edPhone, edWhats;
+    private TextView txtCreateAdmin;
     private EditText edCidade, edCep, edModalidades, edMinimo, edMaximo;
     private Spinner spAtendimento, spProfissao;
-    private Button btEnviarLogin, btCreateAdmin, bnCadastraProfi,btSalvarProf ;
+    private Button btEnviarLogin, bnCadastraProfi,btSalvarProf ;
     private Button btCreateProf, btReadProf;
 
     @Override
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 carregaComponenstesOpcoesAdmin();
             }
         });
-        btCreateAdmin.setOnClickListener(new View.OnClickListener() {
+        txtCreateAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.activity_cadastrar_admin);
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void carregaComponenstesNewAdmin() {
         edEmailAdmin = (EditText) findViewById(R.id.edtCreateAdmin);
         edSenhaAdmin = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
-        btCreateAdmin = (Button)  findViewById(R.id.btnCreateNewAdmin);
+        txtCreateAdmin = (TextView)  findViewById(R.id.txtCreateNewAdmin);
 
     }
 

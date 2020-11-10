@@ -7,6 +7,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mynailsadmin.activitys.MainActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override

@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-    private FirebaseAuth usuarioAdmin = FirebaseAuth.getInstance();
+
 
     private EditText edLogin, edSenha, edEmailAdmin, edSenhaAdmin;
     private EditText edNomePro, edSobrenomeProf, edFantasia, edEndereco, edNumero, edBairro, edUf, edPhone, edWhats;
@@ -64,13 +64,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 carregaComponenstesOpcoesAdmin();
             }
         });
-        txtCreateAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_cadastrar_admin);
-                carregaComponenstesNewAdmin();
-            }
-        });
+
     }
     private void carregaComponenstesOpcoesAdmin() {
         btCreateProf = (Button) findViewById(R.id.btnTelaCadastroProfissional);
@@ -93,8 +87,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
     private void carregaComponenstesNewAdmin() {
-        edEmailAdmin = (EditText) findViewById(R.id.edtCreateAdmin);
-        edSenhaAdmin = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
+        //edEmailAdmin = (EditText) findViewById(R.id.edtCreateAdmin);
+       // edSenhaAdmin = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
         txtCreateAdmin = (TextView)  findViewById(R.id.txtCreateNewAdmin);
 
     }

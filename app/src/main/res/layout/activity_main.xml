@@ -14,7 +14,8 @@
         android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="Welcome To My Nays Admin"
+        android:text="Admin escolha uma opção"
+
         android:layout_marginLeft="80dp"
         android:layout_marginTop="60dp"
         android:textAlignment="center"
@@ -24,91 +25,37 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="59dp" />
+        android:layout_height="123dp" />
 
-    <TextView
-        android:id="@+id/txtLogin"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:fontFamily="serif-monospace"
-        android:text="Login"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="30dp"
-        android:textStyle="bold" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="14dp" />
 
-    <EditText
-        android:id="@+id/edtLoginAdmin"
-        android:layout_width="232dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="80dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="23dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="234dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:fontFamily="serif-monospace"
-        android:text="Password"
-        android:pointerIcon="grabbing"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="14dp" />
-
-
-    <EditText
-        android:id="@+id/editTextPasswordAdmin"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:pointerIcon="cell"
-        android:textColor="@android:color/holo_orange_dark" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="38dp" />
     <Button
-        android:id="@+id/btnAutenticarDadosAdmin"
+        android:id="@+id/btnTelaCadastroProfissional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="Create"
         android:textSize="30dp"
         android:fontFamily="serif-monospace"
         android:textColor="@android:color/holo_orange_dark"
         android:textStyle="bold"
         android:background="@android:color/transparent"/>
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="38dp" />
-
-    <TextView
-        android:id="@+id/txtCreateNewAdmin"
+    <Button
+        android:id="@+id/btnTelaPesquisarProfissional"
         android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:text="Read"
+        android:textSize="30dp"
         android:fontFamily="serif-monospace"
-        android:text="Create Account"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@android:color/transparent"/>
 
 </LinearLayout>
 

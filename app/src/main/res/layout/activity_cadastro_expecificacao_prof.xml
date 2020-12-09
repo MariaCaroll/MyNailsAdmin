@@ -1,39 +1,531 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
+    android:configChanges="orientation|screenSize"
+    android:background="@drawable/gradiente_back"
     android:orientation="vertical"
-    android:background="@color/darknnes"
-    android:backgroundTint="@color/darknnesrigh">
+    tools:context=".activitys.MainActivity">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtWelcome"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/pressstart_2p"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="Cadastrar Profissionais "-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@android:color/holo_blue_dark"-->
+<!--            android:textSize="30dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="36dp" />-->
 
 
-    <TextView
-        android:id="@+id/txtWelcome"
-        android:layout_width="317dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:fontFamily="serif-monospace"
-        android:text="Cadastrar Expecificaões do  Profissional"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="53dp" />
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="20dp" />-->
 
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="match_parent"
-        android:layout_height="77dp"
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">]-->
 
-        android:background="@android:color/transparent"
-        android:fontFamily="serif-monospace"
-        android:text="Cadastrar"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+<!--            <EditText-->
+<!--                android:id="@+id/edtNomeProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Nome"-->
+<!--                android:nextFocusDown="@id/edtSobrenomeProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
 
-</LinearLayout>
+
+
+
+<!--        </LinearLayout>-->
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtSobrenomeProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Sobrenome"-->
+<!--                android:nextFocusDown="@id/edtNomeFatasiaProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtNomeFatasiaProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Fantasia"-->
+<!--                android:nextFocusDown="@id/edtWhatsProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtWhatsProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="WhatsApp"-->
+<!--                android:nextFocusDown="@id/edtTelefoneProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtTelefoneProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Telefone/Celular"-->
+<!--                android:nextFocusDown="@id/edtEstadoProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtEstadoProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Estado"-->
+<!--                android:nextFocusDown="@id/edtCepProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtCepProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="CEP"-->
+<!--                android:nextFocusDown="@id/edtCidadeProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtCidadeProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Cidade"-->
+<!--                android:nextFocusDown="@id/edtLogradouroProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtLogradouroProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Logradouro"-->
+<!--                android:nextFocusDown="@id/edtNumeroProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtNumeroProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Nº"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtBairroProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Bairro"-->
+<!--                android:nextFocusDown="@id/edtValorMaximoProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtValorMaximoProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Valor Máximo"-->
+<!--                android:nextFocusDown="@id/edtValorMinimoProf"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            l-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/edtValorMinimoProf"-->
+<!--                android:layout_width="362dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:hint="Valor Mínimo"-->
+<!--                android:nextFocusDown="@id/sprProfissao"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="63dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/sprProfissao"-->
+<!--                android:layout_width="358dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:nextFocusDown="@id/sprModoAtender"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/sprModoAtender"-->
+<!--                android:layout_width="366dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:layout_marginEnd="24dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                android:baselineAligned="true"-->
+<!--                android:ems="10"-->
+<!--                android:fontFamily="@font/pressstart_2p"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:nextFocusDown="@id/edtModalidadeProf"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="16dp" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                android:layout_width="match_parent"-->
+<!--                xmlns:tools="http://schemas.android.com/tools"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:configChanges="orientation|screenSize"-->
+<!--                android:orientation="vertical"-->
+<!--                tools:context=".activitys.MainActivity">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtModalidadeProf"-->
+<!--                    android:layout_width="362dp"-->
+<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_marginStart="24dp"-->
+<!--                    android:layout_marginEnd="24dp"-->
+<!--                    android:background="@drawable/drawable_caixa_texto_trans"-->
+<!--                    android:baselineAligned="true"-->
+<!--                    android:fontFamily="@font/pressstart_2p"-->
+<!--                    android:hint="Modalidade"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="@android:color/holo_blue_dark"-->
+<!--                    android:textColorHint="@android:color/holo_blue_dark"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--            </ScrollView>-->
+
+
+
+<!--        </LinearLayout>-->
+
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="17dp" />-->
+
+
+<!--        <Button-->
+<!--            android:id="@+id/btnCadastrarProf"-->
+<!--            android:layout_width="276dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/drawable_button_login"-->
+<!--            android:baselineAligned="false"-->
+
+<!--            android:fontFamily="@font/pressstart_2p"-->
+<!--            android:text="Create"-->
+<!--            android:textColor="@android:color/holo_blue_dark"-->
+<!--            android:textColorHint="@android:color/holo_blue_dark"-->
+<!--            android:textSize="30dp" />-->
+
+
+<!--    </LinearLayout>-->
+
+
+
+</ScrollView>

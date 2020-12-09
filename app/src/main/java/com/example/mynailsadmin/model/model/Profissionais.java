@@ -1,4 +1,4 @@
-package com.example.mynailsadmin;
+package com.example.mynailsadmin.model.model;
 
 public class Profissionais {
 
@@ -6,9 +6,11 @@ public class Profissionais {
     private String endereco_rua, endereco_bairro, endereco_numero ;
     private String endereco_cep, endereco_cidade, endereco_uf;
     private double valor_minimo, valor_maximo;
+    private String telenone, whats;
     private String tipo_atendimento;
     private String tipo_profissional;
     private String modalidades;
+    private String fotocaminho;
 
     public Profissionais() {
     }
@@ -101,6 +103,22 @@ public class Profissionais {
         this.valor_maximo = valor_maximo;
     }
 
+    public String getTelenone() {
+        return telenone;
+    }
+
+    public void setTelenone(String telenone) {
+        this.telenone = telenone;
+    }
+
+    public String getWhats() {
+        return whats;
+    }
+
+    public void setWhats(String whats) {
+        this.whats = whats;
+    }
+
     public String getTipo_atendimento() {
         return tipo_atendimento;
     }
@@ -123,5 +141,13 @@ public class Profissionais {
 
     public void setModalidades(String modalidades) {
         this.modalidades = modalidades;
+    }
+
+    public String getFotocaminho() {
+        return fotocaminho;
+    }
+
+    public void setFotocaminho(String fotocaminho) {
+        this.fotocaminho = fotocaminho;
     }
 }

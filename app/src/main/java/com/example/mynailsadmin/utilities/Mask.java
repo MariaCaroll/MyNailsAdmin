@@ -1,4 +1,4 @@
-package com.example.mynailsadmin;
+package com.example.mynailsadmin.utilities;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;

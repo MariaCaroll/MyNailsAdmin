@@ -63,7 +63,6 @@ public class CreateProfActivity extends AppCompatActivity {
             prof.setTipo_atendimento(spModoAtender.getSelectedItem().toString());
             prof.setTipo_profissional(spTipoProfissional.getSelectedItem().toString());
 
-
             prof.salvar();
 
 

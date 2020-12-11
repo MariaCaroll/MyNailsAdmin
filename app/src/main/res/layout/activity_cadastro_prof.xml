@@ -506,23 +506,22 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="17dp" />f
 
 
         <Button
             android:id="@+id/btnCadastrarProf"
-            android:layout_width="276dp"
-            android:layout_height="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="71dp"
             android:layout_gravity="center"
-            android:background="@drawable/drawable_button_login"
+            android:background="@drawable/ic_baseline_add_circle_24"
             android:baselineAligned="false"
 
             android:fontFamily="@font/pressstart_2p"
-            android:text="Create"
+            android:onClick="cadastrarProf"
             android:textColor="@android:color/holo_blue_dark"
             android:textColorHint="@android:color/holo_blue_dark"
-            android:textSize="30dp"
-           android:onClick="cadastrarProf" />
+            android:textSize="30dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -533,6 +532,11 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
+
+
+
 
     </LinearLayout>
 

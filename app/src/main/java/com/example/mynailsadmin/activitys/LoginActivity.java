@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                         admin = new Usuario();
                         admin.setEmail(txtEmail);
                         admin.setSenha(txtSenha);
-                        validarLogin(admin);
+                        validarLogin();
 
                     }else {
                         Toast.makeText(LoginActivity.this,
@@ -88,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
        }
    }
 
-    public void validarLogin(Usuario admin) {
+    public void validarLogin() {
         progressBar.setVisibility(View.VISIBLE);
         autenticacao = ConfigFirebase.getReferenciaAutenticacao();
 
@@ -98,22 +100,30 @@ public class LoginActivity extends AppCompatActivity {
         ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
-                    progressBar.setVisibility(View.GONE);
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
-
-                }else {
-                    Toast.makeText(LoginActivity.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
+                String excecao = "";
+                try {
+                    throw task.getException();
+                }catch ( FirebaseAuthInvalidUserException e ) {
+                    excecao = "Usuário não está cadastrado.";
+                }catch ( FirebaseAuthInvalidCredentialsException e ){
+                    excecao = "E-mail e senha não correspondem a um usuário cadastrado";
+                }catch (Exception e){
+                    excecao = "Erro ao cadastrar usuário: "  + e.getMessage();
+                    e.printStackTrace();
                 }
+
+                Toast.makeText(LoginActivity.this,
+                        excecao,
+                        Toast.LENGTH_SHORT).show();
             }
+
         });
 
     }
 
-    public void abrirCadastroAdmin(View view) {
-        Intent intent = new Intent(LoginActivity.this, CreateAdminActivity.class);
+    public void abrirTelaPrincipal() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
    }
 }

@@ -13,7 +13,7 @@ public class ConfigFirebase {
     // retorna a referencia do database
     public static DatabaseReference getFirebase() {
         if ( refecenciaFirebase == null) {
-            refecenciaFirebase = FirebaseDatabase.getInstance().getReference("");
+            refecenciaFirebase = FirebaseDatabase.getInstance().getReference();
         }
         return  refecenciaFirebase;
     }

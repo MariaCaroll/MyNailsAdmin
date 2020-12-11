@@ -1,5 +1,12 @@
 package com.example.mynailsadmin.model.model;
 
+import android.util.Base64;
+
+import com.example.mynailsadmin.helper.Base64Cunstom;
+import com.example.mynailsadmin.helper.ConfigFirebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
 public class Profissionais {
 
     private String nome, sobreome, nome_fantasia;
@@ -13,6 +20,19 @@ public class Profissionais {
     private String fotocaminho;
 
     public Profissionais() {
+    }
+
+    public void salvar(){
+        FirebaseAuth autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+        String idUsuario = Base64Cunstom.codificarBase64(autenticacao.getCurrentUser().getEmail());
+        DatabaseReference firebase = ConfigFirebase.getFirebase();
+        firebase.child("profissionais")
+                .child(idUsuario)
+                .push()
+                .setValue(this);
+
+
+
     }
 
     public String getNome() {

@@ -521,7 +521,8 @@
             android:text="Create"
             android:textColor="@android:color/holo_blue_dark"
             android:textColorHint="@android:color/holo_blue_dark"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+           android:onClick="cadastrarProf" />
 
         <Space
             android:layout_width="match_parent"

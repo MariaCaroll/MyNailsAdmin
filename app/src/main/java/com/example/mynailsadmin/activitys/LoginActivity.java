@@ -26,13 +26,11 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 public class LoginActivity extends AppCompatActivity {
 
 
-    private EditText edEmailAdmin, edSenhaAdmin;
-    private Button btEnviarLogin;
-    private TextView criarAdmin;
-
-    private Usuario admin;
-
+    private EditText campoEmail, campoSenha;
+    private Button botaoEntrar;
+    private Usuario usuario;
     private FirebaseAuth autenticacao;
+
 
 
     @Override
@@ -47,9 +45,93 @@ public class LoginActivity extends AppCompatActivity {
 
     public  void carregarComponentes() {
 
-        criarAdmin = findViewById(R.id.txtCreateNewAdmin);
+        campoEmail = findViewById(R.id.edtLoginAdmin);
+        campoSenha = findViewById(R.id.editTextPasswordAdmin);
+        botaoEntrar = findViewById(R.id.btnAutenticarDadosAdmin);
+
+        botaoEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autentcarDados();
+            }
+        });
+
+    }
+
+    public void autentcarDados() {
+
+        botaoEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String textoEmail = campoEmail.getText().toString();
+                String textoSenha = campoSenha.getText().toString();
+
+                if ( !textoEmail.isEmpty() ){
+                    if ( !textoSenha.isEmpty() ){
+
+                        usuario = new Usuario();
+                        usuario.setEmail( textoEmail );
+                        usuario.setSenha( textoSenha );
+                        validarLogin(usuario);
+
+                    }else {
+                        Toast.makeText(LoginActivity.this,
+                                "Preencha a senha!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(LoginActivity.this,
+                            "Preencha o email!",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
 
+    }
+
+    public void validarLogin(Usuario usuario){
+
+        autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+        autenticacao.signInWithEmailAndPassword(
+                usuario.getEmail(),
+                usuario.getSenha()
+        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if ( task.isSuccessful() ){
+
+                    abrirTelaPrincipal();
+
+                }else {
+
+                    String excecao = "";
+                    try {
+                        throw task.getException();
+                    }catch ( FirebaseAuthInvalidUserException e ) {
+                        excecao = "Usuário não está cadastrado.";
+                    }catch ( FirebaseAuthInvalidCredentialsException e ){
+                        excecao = "E-mail e senha não correspondem a um usuário cadastrado";
+                    }catch (Exception e){
+                        excecao = "Erro ao cadastrar usuário: "  + e.getMessage();
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(LoginActivity.this,
+                            excecao,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     public void abrirCadastro(View view){

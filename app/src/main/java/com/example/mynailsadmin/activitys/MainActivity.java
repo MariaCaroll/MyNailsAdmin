@@ -8,45 +8,46 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mynailsadmin.R;
+import com.example.mynailsadmin.helper.ConfigFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity  {
 
-  private Button btCreateProf, btEditProf;
+
+    private FirebaseAuth autenticacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        carregarComponentes();
+      //  setContentView(R.layout.activity_main);
+
 
     }
 
-    public  void carregarComponentes ( ) {
-
-        btCreateProf = (Button) findViewById(R.id.btnCreateProf);
-
-        btEditProf = (Button) findViewById(R.id.btnEdiProf);
-
-        //entrar na tela de criar perfil de profissional
-
-        btCreateProf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CreateProfActivity.class));
-                finish();
-            }
-        });
-
-        //entrar na tela de editar perfil de profissional
-        btEditProf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
-            }
-        });
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuarioLogado();
     }
 
+    public void btEntrar(View view){
+        startActivity(new Intent(this, LoginActivity.class));
+    }
 
+    public void btCadastrar(View view){
+        startActivity(new Intent(this, CreateAdminActivity.class));
+    }
+
+    public void verificarUsuarioLogado(){
+        autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+
+        if( autenticacao.getCurrentUser() != null ){
+            abrirTelaPrincipal();
+        }
+    }
+
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(this, PrincipalActivity.class));
+    }
 
 }

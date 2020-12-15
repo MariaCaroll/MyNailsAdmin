@@ -37,7 +37,9 @@ dependencies {
     implementation'com.google.firebase:firebase-auth:18.0.0'
 
 
+
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'
+

@@ -99,6 +99,7 @@ public class CreateAdminActivity extends AppCompatActivity {
                     Toast.makeText(CreateAdminActivity.this,
                             "Sucesso ao cadastrar usuário!",
                             Toast.LENGTH_SHORT).show();
+                    limparCampos();
                 } else {
 
                     String excecao = "";
@@ -122,5 +123,11 @@ public class CreateAdminActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void limparCampos() {
+        campoEmail.setHint("E-mail");
+        campoNome.setHint("Usuário");
+        campoSenha.setHint("Senha");
     }
 }

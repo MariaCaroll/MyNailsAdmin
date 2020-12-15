@@ -107,7 +107,7 @@
         android:background="@android:color/transparent"
         android:baselineAligned="false"
         android:fontFamily="@font/pressstart_2p"
-        android:onClick="abrirCadastroAdmin"
+        android:onClick="abrirCadastro"
         android:text="Create Account"
         android:textAlignment="textEnd"
         android:textColor="#86CFE8"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edEmailAdmin, edSenhaAdmin;
     private Button btEnviarLogin;
-    private ProgressBar progressBar;
+    private TextView criarAdmin;
 
     private Usuario admin;
 
@@ -39,6 +40,20 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        carregarComponentes();
 
+
+    }
+
+    public  void carregarComponentes() {
+
+        criarAdmin = findViewById(R.id.txtCreateNewAdmin);
+
+
+    }
+
+    public void abrirCadastro(View view){
+        Intent i = new Intent(LoginActivity.this, CreateAdminActivity.class);
+        startActivity( i );
     }
 }

@@ -24,11 +24,11 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class CreateAdminActivity extends AppCompatActivity {
 
-    private EditText edUsuarioAdmin, edEmailAdminCreate, edSenhaAdminCreate;
+    private EditText campoNome, campoEmail, campoSenha;
     private Button btCreateAdmin;
-    private ProgressBar progressBar;
 
-    private Usuario admin;
+
+    private Usuario usuario;
 
     private FirebaseAuth autenticacao;
 
@@ -41,15 +41,86 @@ public class CreateAdminActivity extends AppCompatActivity {
         carregarTelaCreteAdmin();
 
 
+    }
+
+    public void carregarTelaCreteAdmin() {
+        campoNome = (EditText) findViewById(R.id.edtUsuarioAdmin);
+        campoEmail = (EditText) findViewById(R.id.edtCreatLoginAdmin);
+        campoSenha = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
+        btCreateAdmin = (Button) findViewById(R.id.btnCreateAdmin);
+
+        btCreateAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autenticarDados();
+
+            }
+        });
+
 
     }
 
-    public void carregarTelaCreteAdmin(){
-        edUsuarioAdmin = (EditText) findViewById(R.id.edtUsuarioAdmin);
-        edEmailAdminCreate = (EditText) findViewById(R.id.edtCreatLoginAdmin);
-        edSenhaAdminCreate = (EditText) findViewById(R.id.editTextPasswordCreateAdmin);
-        btCreateAdmin = (Button) findViewById(R.id.btnCreateAdmin);
-        progressBar = (ProgressBar) findViewById(R.id.progressCreateAdmin);
+    public void autenticarDados() {
+        String textoNome = campoNome.getText().toString();
+        String textoEmail = campoEmail.getText().toString();
+        String textoSenha = campoSenha.getText().toString();
+
+        //validar campos vazios
+        if (!textoNome.isEmpty()) {
+            if (!textoEmail.isEmpty()) {
+                if (!textoSenha.isEmpty()) {
+
+                    usuario = new Usuario();
+                    usuario.setNome(textoNome);
+                    usuario.setEmail(textoEmail);
+                    usuario.setSenha(textoSenha);
+                    cadastrarUsuario();
+
+                } else {
+                    Toast.makeText(CreateAdminActivity.this, "Preencha a senha!", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(CreateAdminActivity.this, "Preencha o email!", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(CreateAdminActivity.this, "Preencha o nome!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public void cadastrarUsuario() {
+        autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+        autenticacao.createUserWithEmailAndPassword(
+                usuario.getEmail(), usuario.getSenha()
+        ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(CreateAdminActivity.this,
+                            "Sucesso ao cadastrar usuário!",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+
+                    String excecao = "";
+                    try {
+                        throw task.getException();
+                    } catch (FirebaseAuthWeakPasswordException e) {
+                        excecao = "Digite uma senha mais forte!";
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        excecao = "Por favor, digite um e-mail válido";
+                    } catch (FirebaseAuthUserCollisionException e) {
+                        excecao = "Este conta já foi cadastrada";
+                    } catch (Exception e) {
+                        excecao = "Erro ao cadastrar usuário: " + e.getMessage();
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(CreateAdminActivity.this,
+                            excecao,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 }

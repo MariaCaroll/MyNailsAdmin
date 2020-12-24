@@ -61,9 +61,9 @@ public class CreateAdminActivity extends AppCompatActivity {
     }
 
     public void autenticarDados() {
-        String textoNome = campoNome.getText().toString();
-        String textoEmail = campoEmail.getText().toString();
-        String textoSenha = campoSenha.getText().toString();
+        String textoNome = campoNome.getText().toString().trim();
+        String textoEmail = campoEmail.getText().toString().trim();
+        String textoSenha = campoSenha.getText().toString().trim();
 
         //validar campos vazios
         if (!textoNome.isEmpty()) {

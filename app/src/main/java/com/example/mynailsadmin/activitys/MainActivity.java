@@ -19,35 +19,18 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  setContentView(R.layout.activity_main);
+      setContentView(R.layout.activity_main);
 
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        verificarUsuarioLogado();
-    }
 
-    public void btEntrar(View view){
-        startActivity(new Intent(this, LoginActivity.class));
-    }
 
-    public void btCadastrar(View view){
-        startActivity(new Intent(this, CreateAdminActivity.class));
-    }
+    public void abrirTelaLogin(View view){
 
-    public void verificarUsuarioLogado(){
-        autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity( i );
 
-        if( autenticacao.getCurrentUser() != null ){
-            abrirTelaPrincipal();
-        }
-    }
-
-    public void abrirTelaPrincipal(){
-        startActivity(new Intent(this, PrincipalActivity.class));
     }
 
 }

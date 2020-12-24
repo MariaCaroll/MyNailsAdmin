@@ -60,12 +60,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void autentcarDados() {
 
-        botaoEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String textoEmail = campoEmail.getText().toString();
-                String textoSenha = campoSenha.getText().toString();
+                String textoEmail = campoEmail.getText().toString().trim();
+                String textoSenha = campoSenha.getText().toString().trim();
 
                 if ( !textoEmail.isEmpty() ){
                     if ( !textoSenha.isEmpty() ){
@@ -73,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         usuario = new Usuario();
                         usuario.setEmail( textoEmail );
                         usuario.setSenha( textoSenha );
-                        validarLogin(usuario);
+                        validarLogin();
 
                     }else {
                         Toast.makeText(LoginActivity.this,
@@ -87,23 +83,19 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
-        });
 
-
-    }
-
-    public void validarLogin(Usuario usuario){
+    public void validarLogin(){
 
         autenticacao = ConfigFirebase.getReferenciaAutenticacao();
         autenticacao.signInWithEmailAndPassword(
                 usuario.getEmail(),
                 usuario.getSenha()
-        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if ( task.isSuccessful() ){
-
+                    Toast.makeText(LoginActivity.this, "Sucesso", Toast.LENGTH_SHORT).show();
                     abrirTelaPrincipal();
 
                 }else {
@@ -130,7 +122,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirTelaPrincipal(){
-        startActivity(new Intent(this, MainActivity.class));
+
+       startActivity(new Intent(this, PrincipalActivity.class));
         finish();
     }
 

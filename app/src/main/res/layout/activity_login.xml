@@ -97,6 +97,7 @@
         android:background="@drawable/drawable_button_login"
         android:baselineAligned="false"
         android:fontFamily="@font/pressstart_2p"
+        android:onClick="abrirTelaPrincipal"
         android:text="Submit"
         android:textColor="@android:color/holo_blue_dark"
         android:textColorHint="@android:color/holo_blue_dark"

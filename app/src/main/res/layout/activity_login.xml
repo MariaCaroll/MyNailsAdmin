@@ -34,8 +34,8 @@
 
     <EditText
         android:id="@+id/edtLoginAdmin"
-        android:layout_width="367dp"
-        android:layout_height="74dp"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/drawable_caixa_texto_trans"
@@ -55,26 +55,24 @@
         app:layout_constraintTop_toBottomOf="@+id/txtCreaeAdmin" />
 
 
-
     <EditText
         android:id="@+id/editTextPasswordAdmin"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/drawable_caixa_texto_trans"
         android:baselineAligned="false"
+        android:contentDescription="@string/firebase_database_url"
         android:drawableLeft="@drawable/ic_cadeado_personalizado"
         android:drawablePadding="5dp"
-        android:contentDescription="@string/firebase_database_url"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:hint="Senha"
-        app:passwordToggleEnabled="true"
-
-
         android:inputType="textPassword"
+
+
         android:padding="10dp"
         android:password="false"
         android:pointerIcon="cell"
@@ -84,7 +82,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnAutenticarDadosAdmin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtLoginAdmin" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLoginAdmin"
+        app:passwordToggleEnabled="true" />
 
 
     <Button
@@ -99,6 +98,7 @@
         android:fontFamily="@font/pressstart_2p"
         android:onClick="abrirTelaPrincipal"
         android:text="Submit"
+        android:textAlignment="gravity"
         android:textColor="@android:color/holo_blue_dark"
         android:textColorHint="@android:color/holo_blue_dark"
         android:textSize="30dp"

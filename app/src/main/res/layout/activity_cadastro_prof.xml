@@ -49,7 +49,7 @@
             <EditText
                 android:id="@+id/edtNomeProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -79,7 +79,7 @@
             <EditText
                 android:id="@+id/edtSobrenomeProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -105,7 +105,7 @@
             <EditText
                 android:id="@+id/edtNomeFatasiaProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -133,7 +133,7 @@
             <EditText
                 android:id="@+id/edtWhatsProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -160,7 +160,7 @@
             <EditText
                 android:id="@+id/edtTelefoneProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -169,6 +169,7 @@
                 android:hint="Telefone/Celular"
                 android:nextFocusDown="@id/edtEstadoProf"
                 android:padding="10dp"
+                android:phoneNumber="true"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textColorHint="@android:color/holo_blue_dark"
                 android:textSize="20dp"
@@ -187,7 +188,7 @@
             <EditText
                 android:id="@+id/edtEstadoProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -243,7 +244,7 @@
             <EditText
                 android:id="@+id/edtCidadeProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -272,7 +273,7 @@
             <EditText
                 android:id="@+id/edtLogradouroProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -329,7 +330,7 @@
             <EditText
                 android:id="@+id/edtBairroProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -357,7 +358,7 @@
             <EditText
                 android:id="@+id/edtValorMaximoProf"
                 android:layout_width="362dp"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -365,6 +366,7 @@
                 android:fontFamily="@font/pressstart_2p"
                 android:hint="Valor Máximo"
                 android:nextFocusDown="@id/edtValorMinimoProf"
+                android:numeric="decimal"
                 android:padding="10dp"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textColorHint="@android:color/holo_blue_dark"
@@ -387,7 +389,7 @@
             <EditText
                 android:id="@+id/edtValorMinimoProf"
                 android:layout_width="362dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/drawable_caixa_texto_trans"
@@ -395,6 +397,7 @@
                 android:fontFamily="@font/pressstart_2p"
                 android:hint="Valor Mínimo"
                 android:nextFocusDown="@id/sprProfissao"
+                android:numeric="decimal"
                 android:padding="10dp"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textColorHint="@android:color/holo_blue_dark"
@@ -472,10 +475,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                xmlns:tools="http://schemas.android.com/tools"
+            <ScrollView
+                android:layout_width="372dp"
                 android:layout_height="match_parent"
                 android:configChanges="orientation|screenSize"
                 android:orientation="vertical"

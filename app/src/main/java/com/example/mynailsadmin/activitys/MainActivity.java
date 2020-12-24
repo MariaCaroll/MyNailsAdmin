@@ -33,4 +33,11 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    public void abrirTelaAbout(View view){
+
+        Intent i = new Intent(MainActivity.this, AboutUsActivity.class);
+        startActivity( i );
+
+    }
+
 }

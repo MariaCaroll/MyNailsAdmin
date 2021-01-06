@@ -186,7 +186,7 @@
                 android:baselineAligned="true"
                 android:fontFamily="@font/pressstart_2p"
                 android:hint="Telefone/Celular"
-                android:nextFocusDown="@id/edtEstadoProf"
+                android:nextFocusDown="@id/sprEstado"
                 android:padding="10dp"
                 android:phoneNumber="true"
                 android:textColor="@android:color/holo_blue_dark"

@@ -108,8 +108,8 @@ public class CreateProfActivity extends AppCompatActivity {
         //salvar a prof
         prof.salvar(tipoProfissional);
         limparCampos();
-
-        Toast.makeText(CreateProfActivity.this, "Sucesso ao cadastrar Profissional",
+        Toast.makeText(CreateProfActivity.this,
+                "Sucesso ao cadastrar o profissional!",
                 Toast.LENGTH_SHORT).show();
     }
 

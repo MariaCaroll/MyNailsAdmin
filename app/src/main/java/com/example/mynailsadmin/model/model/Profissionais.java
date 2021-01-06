@@ -33,7 +33,6 @@ public class Profissionais {
         firebase.child("profissionais")
                 .child(idUsuario)
                 .child(tipo_profissional)
-                .child(endereco_cidade)
                 .push()
                 .setValue(this);
 

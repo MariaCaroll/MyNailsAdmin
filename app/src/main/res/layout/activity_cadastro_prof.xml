@@ -39,6 +39,25 @@
 
         <Space
             android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <EditText
+            android:id="@+id/edtData"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_today_24"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:fontFamily="@font/pressstart_2p"
+            android:hint="00/00/0000"
+            android:inputType="date"
+            android:padding="24dp"
+            android:paddingLeft="5dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorHint="@android:color/holo_blue_dark" />
+
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <LinearLayout
@@ -185,22 +204,27 @@
             android:orientation="horizontal">
 
 
-            <EditText
-                android:id="@+id/edtEstadoProf"
-                android:layout_width="362dp"
+
+            <Spinner
+                android:id="@+id/sprEstado"
+                android:layout_width="366dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:layout_weight="1"
                 android:background="@drawable/drawable_caixa_texto_trans"
                 android:baselineAligned="true"
+                android:ems="10"
+
+                android:entries="@array/estados"
                 android:fontFamily="@font/pressstart_2p"
-                android:hint="Estado"
+                android:inputType="textPersonName"
                 android:nextFocusDown="@id/edtCepProf"
-                android:padding="10dp"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textColorHint="@android:color/holo_blue_dark"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
 
@@ -381,10 +405,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="64dp"
             android:orientation="horizontal">
-
-            l
 
             <EditText
                 android:id="@+id/edtValorMinimoProf"
@@ -425,6 +447,7 @@
                 android:background="@drawable/drawable_caixa_texto_trans"
                 android:baselineAligned="true"
                 android:ems="10"
+                android:entries="@array/profissao"
                 android:fontFamily="@font/pressstart_2p"
                 android:inputType="textPersonName"
                 android:nextFocusDown="@id/sprModoAtender"
@@ -455,6 +478,8 @@
             android:background="@drawable/drawable_caixa_texto_trans"
             android:baselineAligned="true"
             android:ems="10"
+
+            android:entries="@array/modoAtender"
             android:fontFamily="@font/pressstart_2p"
             android:inputType="textPersonName"
             android:nextFocusDown="@id/edtModalidadeProf"

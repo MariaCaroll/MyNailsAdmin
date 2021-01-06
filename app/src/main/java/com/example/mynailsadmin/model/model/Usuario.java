@@ -1,8 +1,12 @@
 package com.example.mynailsadmin.model.model;
 
+import com.example.mynailsadmin.helper.ConfigFirebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class Usuario {
 
-    private String id;
+    private String idUsuario;
     private String nome;
     private String email;
     private String caminhoFoto;
@@ -11,12 +15,20 @@ public class Usuario {
     public Usuario() {
     }
 
-    public String getId() {
-        return id;
+    public void salvar() {
+        DatabaseReference firebase = ConfigFirebase.getFirebase();
+        firebase.child("usuarios")
+                .child(this.idUsuario)
+                .setValue(this);
     }
 
-    public void setId(String id) {
-        this.id = id;
+    @Exclude
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNome() {
@@ -43,6 +55,7 @@ public class Usuario {
         this.caminhoFoto = caminhoFoto;
     }
 
+    @Exclude
     public String getSenha() {
         return senha;
     }

@@ -18,16 +18,22 @@ public class Profissionais {
     private String tipo_profissional;
     private String modalidades;
     private String fotocaminho;
+    private String data;
+
+
 
     public Profissionais() {
     }
 
-    public void salvar(){
+    public void salvar(String tipoProfissional){
         FirebaseAuth autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+
         String idUsuario = Base64Cunstom.codificarBase64(autenticacao.getCurrentUser().getEmail());
         DatabaseReference firebase = ConfigFirebase.getFirebase();
         firebase.child("profissionais")
                 .child(idUsuario)
+                .child(tipo_profissional)
+                .child(endereco_cidade)
                 .push()
                 .setValue(this);
 
@@ -169,5 +175,13 @@ public class Profissionais {
 
     public void setFotocaminho(String fotocaminho) {
         this.fotocaminho = fotocaminho;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 }

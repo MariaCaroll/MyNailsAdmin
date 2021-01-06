@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mynailsadmin.R;
+import com.example.mynailsadmin.helper.Base64Cunstom;
 import com.example.mynailsadmin.helper.ConfigFirebase;
 import com.example.mynailsadmin.model.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -96,9 +97,13 @@ public class CreateAdminActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(CreateAdminActivity.this,
-                            "Sucesso ao cadastrar usuário!",
-                            Toast.LENGTH_SHORT).show();
+
+                    String idUsuario = Base64Cunstom.codificarBase64( usuario.getEmail());
+                    usuario.setIdUsuario(idUsuario);
+                    usuario.salvar();
+
+
+                    finish();
                     limparCampos();
                 } else {
 

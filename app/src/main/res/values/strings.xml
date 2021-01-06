@@ -2,14 +2,47 @@
     <string name="app_name">MyNailsAdmin</string>
 
     <string-array name="profissao">
+        <item> Selected Item</item>
         <item> Manicure e Pedicure</item>
         <item> Cabelereiro </item>
 
     </string-array>
 
-    <string-array name="modoAtender">
+    <string-array name="modoAtender" >
+        <item> Selected Item</item>
         <item> A domicilio</item>
         <item> Em Casa</item>
         <item> No salão</item>
+    </string-array>
+
+    <string-array name="estados" >
+        <item> Selected Item</item>
+        <item> AC</item>
+        <item> AL</item>
+        <item> AP</item>
+        <item> AM</item>
+        <item> BA</item>
+        <item> CE</item>
+        <item> ES</item>
+        <item> GO</item>
+        <item> MA</item>
+        <item> MT</item>
+        <item> MS</item>
+        <item> MG</item>
+        <item> PA</item>
+        <item> PB</item>
+        <item> PR</item>
+        <item> PE</item>
+        <item> PI</item>
+        <item> RJ</item>
+        <item> RN</item>
+        <item> RS</item>
+        <item> RO</item>
+        <item> RR</item>
+        <item> SC</item>
+        <item> SP</item>
+        <item> SE</item>
+        <item> TO</item>
+        <item> DF</item>
     </string-array>
 </resources>

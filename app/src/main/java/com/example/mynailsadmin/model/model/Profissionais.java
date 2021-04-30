@@ -7,8 +7,11 @@ import com.example.mynailsadmin.helper.ConfigFirebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
+import java.util.List;
+
 public class Profissionais {
 
+    private String idProf;
     private String nome, sobreome, nome_fantasia;
     private String endereco_rua, endereco_bairro, endereco_numero ;
     private String endereco_cep, endereco_cidade, endereco_uf;
@@ -19,15 +22,20 @@ public class Profissionais {
     private String modalidades;
     private String fotocaminho;
     private String data;
+    private List<String> fotos;
 
 
 
     public Profissionais() {
+        DatabaseReference profRef = ConfigFirebase.getFirebase()
+                .child("profissionais");
+         setIdProf(profRef.push().getKey());
+
     }
 
-    public void salvar(String tipoProfissional){
-        FirebaseAuth autenticacao = ConfigFirebase.getReferenciaAutenticacao();
+    public void salvar(){
 
+        FirebaseAuth autenticacao = ConfigFirebase.getReferenciaAutenticacao();
         String idUsuario = Base64Cunstom.codificarBase64(autenticacao.getCurrentUser().getEmail());
         DatabaseReference firebase = ConfigFirebase.getFirebase();
         firebase.child("profissionais")
@@ -36,9 +44,6 @@ public class Profissionais {
                 .child(endereco_cidade)
                 .push()
                 .setValue(this);
-
-
-
     }
 
     public String getNome() {
@@ -183,5 +188,21 @@ public class Profissionais {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String getIdProf() {
+        return idProf;
+    }
+
+    public void setIdProf(String idProf) {
+        this.idProf = idProf;
+    }
+
+    public List<String> getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(List<String> fotos) {
+        this.fotos = fotos;
     }
 }

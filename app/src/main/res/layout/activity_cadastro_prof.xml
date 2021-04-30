@@ -30,20 +30,36 @@
             android:layout_width="match_parent"
             android:layout_height="36dp" />
 
-
-        <ImageView
-            android:id="@+id/imageView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="211dp"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imgProf"
+                android:layout_width="225dp"
+                android:layout_height="203dp"
+                android:layout_gravity="center|center_horizontal"
+                android:cropToPadding="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/padrao"
+                app:riv_border_color="#333333"
+                app:riv_border_width="2dip"
+                app:riv_corner_radius="35dip"
+                app:riv_mutate_background="true"
+                app:riv_oval="true"
+                app:riv_tile_mode="repeat" />
+
+
+        </LinearLayout>
 
         <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_width="53dp"
+            android:layout_height="29dp" />
 
         <EditText
             android:id="@+id/edtData"
-            android:layout_width="363dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_today_24"
             android:drawablePadding="5dp"
@@ -186,7 +202,7 @@
                 android:baselineAligned="true"
                 android:fontFamily="@font/pressstart_2p"
                 android:hint="Telefone/Celular"
-                android:nextFocusDown="@id/edtEstadoProf"
+                android:nextFocusDown="@id/sprEstado"
                 android:padding="10dp"
                 android:phoneNumber="true"
                 android:textColor="@android:color/holo_blue_dark"
@@ -544,7 +560,7 @@
             android:baselineAligned="false"
 
             android:fontFamily="@font/pressstart_2p"
-            android:onClick="cadastrarProf"
+            android:onClick="validarDados"
             android:textColor="@android:color/holo_blue_dark"
             android:textColorHint="@android:color/holo_blue_dark"
             android:textSize="30dp" />

@@ -3,45 +3,48 @@ package com.example.mynailsadmin.helper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class ConfigFirebase {
 
-/*
-    // retorna a referencia do database
-    public static DatabaseReference getFirebase() {
-        if ( refecenciaFirebase == null) {
-            refecenciaFirebase = FirebaseDatabase.getInstance().getReference();
-        }
-        return  refecenciaFirebase;
+    private static StorageReference referenciaStorage;
+    private static FirebaseAuth referenciaAutenticacao;
+    private static DatabaseReference referenciaFirebase;
+
+    public static String getIdUsuario()
+    {
+        FirebaseAuth autenticacao = getReferenciaAutenticacao();
+        return autenticacao.getCurrentUser().getUid();
     }
 
-
-    // retorna a instacia do FirebaseAuth
-    public static FirebaseAuth getReferenciaAutenticacao() {
-        if( referenciaAutenticacao == null) {
-            referenciaAutenticacao = FirebaseAuth.getInstance();
-        }
-        return referenciaAutenticacao;
-    }*/
-
-    private static FirebaseAuth autenticacao;
-    private static DatabaseReference firebase;
-
-
     //retorna a instancia do FirebaseDatabase
-    public static DatabaseReference getFirebase(){
-        if ( firebase == null ){
-            firebase = FirebaseDatabase.getInstance().getReference();
+    public static DatabaseReference getFirebase()
+    {
+        if ( referenciaFirebase == null )
+        {
+            referenciaFirebase = FirebaseDatabase.getInstance().getReference();
         }
-        return firebase;
+        return referenciaFirebase;
     }
 
     //Retorna a instancia do FirebaseAuth
-    public static FirebaseAuth getReferenciaAutenticacao(){
-        if( autenticacao == null){
-            autenticacao = FirebaseAuth.getInstance();
+    public static FirebaseAuth getReferenciaAutenticacao()
+    {
+        if( referenciaAutenticacao == null)
+        {
+            referenciaAutenticacao = FirebaseAuth.getInstance();
         }
-        return autenticacao;
+        return referenciaAutenticacao;
+    }
 
+    //retorna a instancia do Storage
+    public static StorageReference getReferenciaStorage()
+    {
+        if(referenciaStorage == null)
+        {
+            referenciaStorage = FirebaseStorage.getInstance().getReference();
+        }
+        return referenciaStorage;
     }
 }
